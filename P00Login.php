@@ -37,10 +37,11 @@
 
             $_SESSION['dataLogin'] = $dLogin;
             $_SESSION['horaLogin'] = $hLogin;
+            $idLog = '';
             
             // faz o registro de Login no histórico
-            $LoginReg = mysqli_query($conectDB, "INSERT INTO registro_login(USUARIO_LOGADO, DATA_LOGIN, HORA_LOGIN) 
-                        VALUES ('$nomeUser', '$dLogin', '$hLogin')");
+            $LoginReg = mysqli_query($conectDB, "INSERT INTO registro_login(ID_LOGIN, USUARIO_LOGADO, DATA_LOGIN, HORA_LOGIN) 
+                        VALUES ('$idLog', '$nomeUser', '$dLogin', '$hLogin')");
 
             if($nome['CREDENCIAL'] >= 3){
                 header('Location: P10MenuAdministrador.php');
