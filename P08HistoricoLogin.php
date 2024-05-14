@@ -57,12 +57,12 @@
                     <td style="font-size: 12px;width: 400px"                  > <?php echo $dado['USUARIO_LOGADO']; ?> </td>
                     <td style="font-size: 12px;text-align:center;width: 100px">
                         <?php
-                            if($dado['DATA_LOGOUT'] != '0000-00-00'){
+                            if($dado['DATA_LOGOUT'] == null){
+                                echo 'Logado';
+                            } else{
                             $dOUT = $dado['DATA_LOGOUT']; 
                             $dout = strtotime($dOUT);
                             echo date('d/m/Y', $dout);
-                            }else{
-                                echo 'Logado';
                             }
                         ?>
                     </td>
