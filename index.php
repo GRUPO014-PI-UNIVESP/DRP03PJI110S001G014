@@ -3,7 +3,7 @@
     // Modulo incial do sistema que abre uma página web e solicita Usuário e Senha para Login
     
     // chama rotina de conexão com banco de dados
-    include('P01.ConectDB.php');
+    include('P01ConectDB.php');
 
 ?>
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ fieldset   {text-align: center; border-radius: 8px; border-color: whitesmoke;}
 .inputUser:valid ~ .labelInput{top: -10px; font-size: 10px; color: white;}
 </style>
 <body>
-    <form action="P00.Login.php" method="POST">
+    <form action="P00Login.php" method="POST">
         <div class="LoginBox">
             <fieldset>
                 <legend style="font-size: 25px;"><b>Login</b></legend>
