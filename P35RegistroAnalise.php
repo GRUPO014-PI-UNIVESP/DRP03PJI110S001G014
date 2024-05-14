@@ -21,18 +21,11 @@
     $transfer  = $conectDB->query($sqlLista) or die();
     $comutador = $transfer->fetch_assoc();
 
-    while($dado5 = $transfer->fetch_array()){
+    $loteA     = $comutador['LOTE_AMOSTRA'];
 
-        $loteA      = $dado5['LOTE_AMOSTRA'];
-        $loteR      = $dado5['LOTE_REAGENTE'];
-        $descR      = $dado5['DESCRICAO_REAGENTE'];
-        $consumo    = $dado5['CONSUMO'];
-        $restoLote  = $dado5['Q_LOTE'];
-        $ttlEstoque = $dado5['T_ESTOQUE'];
 
-        $alteraSituação  = mysqli_query($conectDB, "UPDATE ordem_servico     SET DATA_CONCLUSAO = '$dataconclusao', SITUACAO = 'CONCLUIDO',
+        $alteraSituação  = mysqli_query($conectDB, "UPDATE ordem_servico SET DATA_CONCLUSAO = '$dataconclusao', SITUACAO = 'CONCLUIDO',
                                                     RESPONSAVEL = '$responsavel' WHERE NUMERO_LOTE = '$loteA'");
-    }
     header('Location: P31RegistroAnalise.php');
 
 ?>
