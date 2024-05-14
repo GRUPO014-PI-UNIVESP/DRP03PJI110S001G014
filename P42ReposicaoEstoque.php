@@ -156,7 +156,7 @@
             </div> 
             <div class="box6esq">
                 <div class="inputBox">
-                <input class="inputUser" type="text" id="notaFis" name="notaFis" style="text-transform: uppercase" required>
+                <input class="inputUser" type="text" id="notaFis" name="notaFis" style="text-transform: uppercase">
                     <label class="labelInput" for="notaFis">Nota Fical</label>
                 </div>
             </div> 
