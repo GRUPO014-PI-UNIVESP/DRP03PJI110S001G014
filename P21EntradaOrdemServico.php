@@ -81,7 +81,7 @@
         $found_amostra  = $result_busca->fetch_assoc();
         $contador       = mysqli_num_rows($result_busca);
         if($contador == 0){
-            echo 'Amostra não encontrada, verifique e reinicie procedimento  "<a href="P21.EntradaOrdemServico.php">Voltar</a>"';
+            echo 'Amostra não encontrada, verifique e reinicie procedimento  "<a href="P21EntradaOrdemServico.php">Voltar</a>"';
         } else{
             $_SESSION['codAmostra'] = $codAmostra;
             $_SESSION['dscAmostra'] = $found_amostra['DESCRICAO_AMOSTRA'];

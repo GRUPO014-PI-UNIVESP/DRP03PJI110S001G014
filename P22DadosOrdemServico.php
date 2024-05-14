@@ -35,7 +35,7 @@
         $registros       = mysqli_num_rows($verifica);
 
         if($registros > 0){
-            echo 'Este No.de Lote já existe na lista de Ordem de Serviço, favor verificar   "<a href="P21.EntradaOrdemServico.php">Entrar</a>"';
+            echo 'Este No.de Lote já existe na lista de Ordem de Serviço, favor verificar   "<a href="P21EntradaOrdemServico.php">Entrar</a>"';
         } else{
             $cadastra  = mysqli_query($conectDB, "INSERT INTO ordem_servico (TIPO_ANALISE, CODIGO_AMOSTRA, DESCRICAO_AMOSTRA,
                                         DATA_ORDEM, DATA_PRAZO, NUMERO_LOTE, QTDE_LOTE, QTDE_AMOSTRA, SITUACAO, RESPONSAVEL)
@@ -144,7 +144,7 @@
                 <div class="box4esq">
                     <br>
                     <input class="b2" type="reset" value="Voltar" id="botao" onclick="location.href='P20MenuGQ.php'">
-                    <input class="b2" type="reset" value="Sair" id="botao" onclick="location.href='P03LogOut.php'">
+                    <input class="b2" type="reset" value="Sair"   id="botao" onclick="location.href='P03LogOut.php'">
                 </div>
                 <div class="box4dir">
                     <br>
@@ -154,7 +154,6 @@
             <p style="font-size:9px; color:bisque;text-align: center;">Developed by EdsonmmInfo 2024</p>
         </form>
         </div>
-
     <input type="button" value="voltar" onclick="location.href='P20MenuGQ.php'">
 </body>
 </html>

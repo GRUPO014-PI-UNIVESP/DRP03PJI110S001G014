@@ -123,31 +123,31 @@
                 </div>                 
                 <div class="box3esq">
                     <div class="inputBox">
-                    <input class="inputUser" type="text" id="embReag" name="embReag" style="text-transform: uppercase">
+                        <input class="inputUser" type="text" id="embReag" name="embReag" style="text-transform: uppercase">
                         <label class="labelInput" for="embReag">Embalagem</label>
                     </div>
                 </div> 
                 <div class="box3mid">
                     <div class="inputBox">
-                    <input class="inputUser" type="number" id="ctdReag" name="ctdReag" required>
+                        <input class="inputUser" type="number" id="ctdReag" name="ctdReag" required>
                         <label class="labelInput" for="ctdReag">Conteúdo Líquido</label>
                     </div>
                 </div> 
                 <div class="box3dir">
                     <div class="inputBox">
-                    <input class="inputUser" type="text" id="uniReag" name="uniReag" style="text-transform: lowercase"required>
+                        <input class="inputUser" type="text" id="uniReag" name="uniReag" style="text-transform: lowercase"required>
                         <label class="labelInput" for="uniReag">Unidade</label>
                     </div>
                 </div> 
                 <div class="box4esq">
                 <div class="inputBox">
-                    <input class="inputUser" type="number" id="cotaSgr" name="cotaSgr" required>
+                        <input class="inputUser" type="number" id="cotaSgr" name="cotaSgr" required>
                         <label class="labelInput" for="cotaSgr">Cota de Segurança</label>
                     </div>
                 </div> 
                 <div class="box4dir">
                     <div class="inputBox">
-                    <input class="inputUser" type="file" id="fispqDc" name="fispqDc">
+                        <input class="inputUser" type="file" id="fispqDc" name="fispqDc">
                         <label class="labelInput" for="fispqDc">Documentação FISPQ</label>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                 <br>
                 <div class="box5esq">
                     <div class="inputBox">
-                    <input class="inputUser" type="text" id="nLote" name="nLote" style="text-transform: uppercase" required>
+                        <input class="inputUser" type="text" id="nLote" name="nLote" style="text-transform: uppercase" required>
                         <label class="labelInput" for="nLote">No. do Lote</label>
                     </div>
                 </div> 
@@ -167,28 +167,28 @@
                 </div> 
                 <div class="box6esq">
                     <div class="inputBox">
-                    <input class="inputUser" type="text" id="notaFis" name="notaFis" style="text-transform: uppercase">
+                        <input class="inputUser" type="text" id="notaFis" name="notaFis" style="text-transform: uppercase">
                         <label class="labelInput" for="notaFis">Nota Fical</label>
                     </div>
                 </div> 
                 <div class="box6dir">
-                <label style="font-size:13px;"for="dValid">Validade............:</label>
-                        <input type="date" name="dValid" id="datas" required>
+                    <label style="font-size:13px;"for="dValid">Validade............:</label>
+                    <input type="date" name="dValid" id="datas" required>
                 </div> 
                 <div class="box7esq">
                     <br>
                     <div class="inputBox">
-                    <input class="inputUser" type="number" id="qLote" name="qLote" required>
+                        <input class="inputUser" type="number" id="qLote" name="qLote" required>
                         <label class="labelInput" for="qLote">Quantidade do Lote</label>
                     </div>
                 </div>
                 <div class="box7dir">
                     <br><br><br>
-                <input type="submit" id="submit" name="submit" value="Confirmar">
+                    <input type="submit" id="submit" name="submit" value="Confirmar">
                 </div>
                 <div class="box8esq">
                     <input class="b2" type="reset" value="Voltar" id="botao" onclick="location.href='P20MenuGQ.php'">
-                    <input class="b2" type="reset" value="Sair" id="botao" onclick="location.href='P03LogOut.php'">
+                    <input class="b2" type="reset" value="Sair"   id="botao" onclick="location.href='P03LogOut.php'">
                     <p style="text-align: center, color: red;"> <?php echo $sucesso ?> </p>
                 </div>
                 <div class="box8dir">

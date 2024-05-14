@@ -213,7 +213,7 @@ fieldset{border-radius: 8px;border-color: whitesmoke;}
                     </div>
                     <div class="boxBotoes">
                         <input class="b2" type="reset" value="Voltar" id="botao" onclick="location.href='P11MenuAdmin.php'">
-                        <input class="b2" type="reset" value="Sair" id="botao" onclick="location.href='P03LogOut.php'"> 
+                        <input class="b2" type="reset" value="Sair"   id="botao" onclick="location.href='P03LogOut.php'"> 
                     </div>
                     <div class="boxSub">
                         <input type="submit" id="submit" name="submit" value="Confirmar" onfocus required>

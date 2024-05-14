@@ -23,7 +23,7 @@
         $buscador  = $resultado->fetch_assoc();
 
         if(mysqli_num_rows($resultado) < 1){
-            $_SESSION['alerta']  = 'Produto não cadastrado, favor verificar e retomar a ação novamente  "<a href="P20.MenuGQ.php">Entrar</a>"';
+            $_SESSION['alerta']  = 'Produto não cadastrado, favor verificar e retomar a ação novamente  "<a href="P20MenuGQ.php">Entrar</a>"';
             echo $_SESSION['alerta'];     
         } else{
             $_SESSION['alerta']  = '';

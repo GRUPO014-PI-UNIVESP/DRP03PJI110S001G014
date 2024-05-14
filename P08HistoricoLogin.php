@@ -30,7 +30,7 @@
 </style>
 <body>
     <div class="mainBox">
-        <input type="reset" value="Voltar" onclick="location.href='P11.MenuAdmin.php'">
+        <input type="reset" value="Voltar" onclick="location.href='P11MenuAdmin.php'">
         <br>
         <br>
         <table >
@@ -62,7 +62,7 @@
                             $dout = strtotime($dOUT);
                             echo date('d/m/Y', $dout);
                             }else{
-                                echo '';
+                                echo 'Logado';
                             }
                         ?>
                     </td>

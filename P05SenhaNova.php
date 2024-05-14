@@ -77,7 +77,7 @@ fieldset{padding: 10px;color: whitesmoke;border-radius: 6px;}
                 <br><br>
                 <input type="submit" name="submit" id="submit">
             </fieldset><br>
-            <input type="reset" value="Voltar" onclick="location.href='P03.LogOut.php'">
+            <input type="reset" value="Voltar" onclick="location.href='P03LogOut.php'">
         </div>
     </form>
 </body>

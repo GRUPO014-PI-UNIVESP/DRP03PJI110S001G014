@@ -98,7 +98,7 @@
                 <div class="linhabotao">
                     <br>
                     <input class="b2" type="reset" value="Voltar" id="botao" onclick="location.href='P20MenuGQ.php'">
-                    <input class="b2" type="reset" value="Sair" id="botao" onclick="location.href='P03LogOut.php'">
+                    <input class="b2" type="reset" value="Sair"   id="botao" onclick="location.href='P03LogOut.php'">
                     <br>
                 </div>
                 <br>

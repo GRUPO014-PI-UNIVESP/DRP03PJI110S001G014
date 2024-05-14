@@ -61,7 +61,7 @@
                 <?php while($dado1 = $listaEstoque->fetch_array()) { ?> 
                 <tr>
                     <td style="font-size: 12px; width: 100px; height: 30px; text-align:center;"> <?php echo $dado1['CODIGO_REAGENTE'];?> </td> 
-                    <td style="font-size: 12px; width: 640px; height: 30px;"                    > <?php echo $dado1['DESCR_REAGENTE']; ?> </td>
+                    <td style="font-size: 12px; width: 640px; height: 30px;"                   > <?php echo $dado1['DESCR_REAGENTE']; ?> </td>
                     <td style="font-size: 12px; width: 100px; height: 30px; text-align:center;"> <?php echo $dado1['COTA_LIMITE'];?> </td>
                     <td style="font-size: 12px; width: 120px; height: 30px; text-align:center;"> <?php echo $dado1['QTDE_ESTOQUE'];?> </td>
                     <td style="font-size: 12px; width: 050px; height: 30px; text-align:center;"> <?php echo $dado1['UNIDADE'];?> </td>

@@ -40,8 +40,7 @@
         <img src="picture01construction.jpg" />
         <p>Sorry, under construction</p>
         <br><br>
-        <button class="sair"
-                    onclick="location.href='P03LogOut.php'">Sair</button><br><br>
+        <button class="sair" onclick="location.href='P03LogOut.php'">Sair</button><br><br>
         </fieldset>
         <p style="font-size:9px; color:bisque;text-align: center;">Developed by EdsonmmInfo 2024</p>
     </div>

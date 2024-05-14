@@ -24,13 +24,5 @@
       $_SESSION['BairroCapturado']  =  $endereco->bairro;
       $_SESSION['CidadeCapturado']  =  $endereco->localidade;
       $_SESSION['UFCapturado']      =  $endereco->uf;
-
-      //echo $_SESSION['cepF'];
-      //echo $_SESSION['ruaF'];
-     // echo $_SESSION['bairroF'];
-      //echo $_SESSION['cidadeF'];
-      //echo $_SESSION['ufF'];
-
-    //header('Location: visualiza.php');
     }
 ?>

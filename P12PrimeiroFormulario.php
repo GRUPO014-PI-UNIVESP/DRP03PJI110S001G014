@@ -79,7 +79,7 @@ fieldset{border-radius: 8px;border-color: whitesmoke;}
                 </div>
                 <div class="boxBotoes">
                     <input class="b2" type="reset" value="Voltar" id="botao" onclick="location.href='P11MenuAdmin.php'">
-                    <input class="b2" type="reset" value="Sair" id="botao" onclick="location.href='P03LogOut.php'"> 
+                    <input class="b2" type="reset" value="Sair"   id="botao" onclick="location.href='P03LogOut.php'"> 
                 </div>
         </fieldset>
         <p style="font-size:9px; color:bisque;text-align: center;">Developed by EdsonmmInfo 2024</p>
