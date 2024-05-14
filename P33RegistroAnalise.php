@@ -47,7 +47,7 @@
             $_SESSION['dscReag'] = $Reagente1['DESCR_REAGENTE'];
             $_SESSION['stkReag'] = $Reagente1['QTDE_ESTOQUE'];
             $_SESSION['fpqReag'] = $Reagente1['FISPQ'];
-            $fispq = 'FISPQfiles/' . $Reagente1['FISPQ'];
+            $fispq = $Reagente1['FISPQ'];
 
             $cota    = $Reagente1['COTA_LIMITE'] . $Reagente1['UNIDADE'];
             $estoque = $Reagente1['QTDE_ESTOQUE'] . $Reagente1['UNIDADE'];
