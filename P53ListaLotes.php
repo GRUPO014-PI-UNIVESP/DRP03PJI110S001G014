@@ -34,7 +34,7 @@
 
     table, td, th{padding: 5px; border: 1px solid lightgreen; border-collapse: collapse;}
     thead, tbody{display: block;}
-    tbody{overflow-y: scroll; height: 500px;}
+    tbody{overflow-y: scroll; height: 90%;}
 </style>
 <body>
     <div class="mainBox">
