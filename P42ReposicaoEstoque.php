@@ -109,19 +109,19 @@
                     <input class="inputUser" type="text" id="" name="" value="<?php echo $_SESSION['dscReag'] ?>">
                     <label class="labelInput" for="">Descrição do Produto</label>
                 </div>
-            </div>                 
+            </div>               
             <div class="box3esq">
                 <div class="inputBox">
                 <input class="inputUser" type="text" id="" name="" value="<?php echo $_SESSION['embReag'] ?>">
                     <label class="labelInput" for="">Embalagem</label>
                 </div>
-            </div> 
+            </div>
             <div class="box3mid">
                 <div class="inputBox">
                 <input class="inputUser" type="number" id="" name="" value="<?php echo $_SESSION['ctdReag'] ?>">
                     <label class="labelInput" for="">Conteúdo Líquido</label>
                 </div>
-            </div> 
+            </div>
             <div class="box3dir">
                 <div class="inputBox">
                 <input class="inputUser" type="text" id="" name="" value="<?php echo $_SESSION['uniReag'] ?>">
