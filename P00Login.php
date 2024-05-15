@@ -47,9 +47,9 @@
             } else if($nome['CREDENCIAL'] == 2 && $nome['DEPARTAMENTO'] == 'GARANTIA DE QUALIDADE'){
                 header('Location: P21MenuGQ.php');
             } else if($nome['CREDENCIAL'] == 2 && $nome['DEPARTAMENTO'] == 'LOGÍSTICA'){
-                header('Location: P51MenuLog.php');
+                header('Location: P90MenuLog.php');
             } else if($nome['CREDENCIAL'] == 2 && $nome['DEPARTAMENTO'] == 'PRODUÇÃO'){
-                header('Location: P61MenuProd.php');
+                header('Location: P91MenuProd.php');
             } else if($nome['CREDENCIAL'] < 2){
                 header('Location: P03LogOut.php');
             }            
