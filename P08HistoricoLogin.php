@@ -11,7 +11,7 @@
 
     //se sessão não tem usuário logado, redireciona para a página de Login
     if(!isset($_SESSION['usuario'])){die('Você não está autorizado a acessar a página, pois não está LOGADO "<a href="index.php">Entrar</a>"');}
-    $consulta = "SELECT * FROM registro_login ORDER BY DATA_LOGIN, HORA_LOGIN DESC";
+    $consulta = "SELECT * FROM registro_login ORDER BY ID_LOGIN DESC";
     $lista    = $conectDB->query($consulta) or die();
 ?>
 <!DOCTYPE html>
