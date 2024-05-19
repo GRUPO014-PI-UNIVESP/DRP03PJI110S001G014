@@ -97,7 +97,7 @@ tbody{overflow-y:scroll; height:150px;}
                     <br>
                     <div class="inputBox">
                         <input class="inputUser" type="text" id="nLote" name="nLote" style="text-transform: uppercase" onchange="this.form.submit()" required>
-                        <label class="labelInput" for="nLote" >Número do Lote*</label>
+                        <label class="labelInput" for="nLote" >Número do Lote da Amostra*</label>
                     </div>
                 </div>
             </form>
@@ -143,14 +143,14 @@ tbody{overflow-y:scroll; height:150px;}
         <div class="tabela2">
         <p style="text-align:center; font-size:14px">Análises Concluídas</p>
         <table>
-                <thead>
-                    <tr>
-                        <th style="width:112px; height: 25px;">No.Lote</th>
-                        <th style="width:112px; height: 25px;">Conclusão</th>
-                        <th style="width:112px; height: 25px;">Responsável</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <thead>
+                <tr>
+                    <th style="width:112px; height: 25px;">No.Lote</th>
+                    <th style="width:112px; height: 25px;">Conclusão</th>
+                    <th style="width:112px; height: 25px;">Responsável</th>
+                </tr>
+            </thead>
+            <tbody>
                 <?php while($dado2 = $lista2->fetch_array()){ ?> 
                 <tr>
                     <td style="font-size:11px; width:114px; height:25px; text-align:center"> <?php echo $dado2['NUMERO_LOTE'];?> </td>
@@ -166,10 +166,10 @@ tbody{overflow-y:scroll; height:150px;}
                         ?>
                     </td>
                     <td style="font-size:11px; width:114px; height:25px; text-align:center;"> <?php echo $dado2['RESPONSAVEL'];?> </td>
-                </tr> 
+                </tr>
                 <?php } ?>
-                </tbody>
-            </table>
+            </tbody>
+        </table>
         </div>
         <div class="rodape">
         <p style="font-size:9px; color:bisque; text-align: center;">Developed by EdsonmmInfo 2024</p> 

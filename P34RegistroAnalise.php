@@ -262,18 +262,18 @@ tbody{overflow-y:scroll; height:150px;}
                             <label class="labelInput" for="rstLote" >Quantidade Restante em Estoque</label>
                     </div>
                 </div>
-                    <div class="pLinha9L">
-                        <br>
-                        <input type="reset" id="submit1" name="continua" value="Próximo Reagente" onclick="location.href='P32RegistroAnalise.php'">
-                    </div> 
-                    <div class="pLinha9M">
-                        <br>
-                        <input type="reset" id="submit2" name="finaliza" value="Finalizar Ordem de Serviço" onclick="location.href='P35RegistroAnalise.php'">
-                    </div>
-                    <div class="pLinha9R">
-                        <br>
-                        <input class="b2" type="reset" value="Voltar" id="botao" onclick="location.href='P20MenuGQ.php'">  
-                    </div>       
+                <div class="pLinha9L">
+                    <br>
+                    <input type="reset" id="submit1" name="continua" value="Próximo Reagente" onclick="location.href='P32RegistroAnalise.php'">
+                </div> 
+                <div class="pLinha9M">
+                    <br>
+                    <input type="reset" id="submit2" name="finaliza" value="Finalizar Ordem de Serviço" onclick="location.href='P35RegistroAnalise.php'">
+                </div>
+                <div class="pLinha9R">
+                    <br>
+                    <input class="b2" type="reset" value="Voltar" id="botao" onclick="location.href='P20MenuGQ.php'">  
+                </div>       
             </fieldset>
             <div class="pLinha00"></div> 
             <div class="tabela3">

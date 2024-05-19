@@ -17,6 +17,9 @@
     }
     $sqlEstoque = "SELECT * FROM reagentes_estoque WHERE QTDE_ESTOQUE > 0 ORDER BY QTDE_ESTOQUE ASC";
     $listaEstoque = $conectDB->query($sqlEstoque) or die();
+    $sit1 = 'font-size: 12px; width: 120px; height: 30px; text-align:center; background-color:green; color:whitesmoke';
+    $sit2 = 'font-size: 12px; width: 120px; height: 30px; text-align:center; background-color:orange; color:black';
+    $sit3 = 'font-size: 12px; width: 120px; height: 30px; text-align:center; background-color:red; color:yellow';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -50,21 +53,30 @@
         <table >
             <thead>
                 <tr>
-                    <th style="width: 100px; font-size: 12px; ">Código do Reagente</th>
-                    <th style="width: 640px; font-size: 12px; ">Descrição do Reagente</th>
-                    <th style="width: 100px; font-size: 12px; ">Cota de Segurança</th>
+                    <th style="width: 090px; font-size: 12px; ">Código do Reagente</th>
+                    <th style="width: 480px; font-size: 12px; ">Descrição do Reagente</th>
+                    <th style="width: 120px; font-size: 12px; ">Situação</th>
                     <th style="width: 120px; font-size: 12px; ">Quantidade em Estoque</th>
                     <th style="width: 050px; font-size: 12px; ">Unidade</th>
+                    <th style="width: 090px; font-size: 12px; ">Cota de Segurança</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while($dado1 = $listaEstoque->fetch_array()) { ?> 
                 <tr>
-                    <td style="font-size: 12px; width: 100px; height: 30px; text-align:center;"> <?php echo $dado1['CODIGO_REAGENTE'];?> </td> 
-                    <td style="font-size: 12px; width: 640px; height: 30px;"                   > <?php echo $dado1['DESCR_REAGENTE']; ?> </td>
-                    <td style="font-size: 12px; width: 100px; height: 30px; text-align:center;"> <?php echo $dado1['COTA_LIMITE'];?> </td>
-                    <td style="font-size: 12px; width: 120px; height: 30px; text-align:center;"> <?php echo $dado1['QTDE_ESTOQUE'];?> </td>
+                    <td style="font-size: 12px; width: 090px; height: 30px; text-align:center;"> <?php echo $dado1['CODIGO_REAGENTE'];?> </td> 
+                    <td style="font-size: 12px; width: 480px; height: 30px;"                   > <?php echo $dado1['DESCR_REAGENTE']; ?> </td>
+                    <?php
+                        switch($dado1['SITUACAO']){
+                            case strtoupper('ESTÁVEL'): $condicao = $sit1; break;
+                            case strtoupper('ALERTA'):  $condicao = $sit2; break;
+                            case strtoupper('CRÍTICO'): $condicao = $sit3; break;
+                        }
+                    ?>
+                    <td style="<?php echo $condicao ?>"> <?php echo $dado1['SITUACAO'];?> </td>
+                    <td style="font-size: 17px; width: 120px; height: 30px; text-align:center;"> <?php echo $dado1['QTDE_ESTOQUE'];?> </td>
                     <td style="font-size: 12px; width: 050px; height: 30px; text-align:center;"> <?php echo $dado1['UNIDADE'];?> </td>
+                    <td style="font-size: 12px; width: 090px; height: 30px; text-align:center;"> <?php echo $dado1['COTA_LIMITE'];?> </td>
                 </tr> 
                 <?php } ?>
             </tbody>

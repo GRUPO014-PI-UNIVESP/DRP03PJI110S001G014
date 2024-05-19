@@ -3,6 +3,11 @@
     // Faz a conexão com o banco de dados
 
     //Rotina de inicialização de conexão com o banco de dados MySQL
+    //$dbHost = 'localHost';
+    //$dbUser = 'root';
+    //$dbPass = '';
+    //$dbBase = 'projetointegrador';
+
     $dbHost = 'us-cluster-east-01.k8s.cleardb.net';
     $dbUser = 'b42ff6e02fff94';
     $dbPass = '2beb86ba';

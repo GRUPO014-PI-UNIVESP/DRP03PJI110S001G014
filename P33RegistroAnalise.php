@@ -29,7 +29,7 @@
         $codReag       = $_POST['codReag'];
         $loteReag      = $_POST['loteReag'];
         $buscaReagente1 = "SELECT * FROM reagentes_estoque WHERE CODIGO_REAGENTE = '$codReag'";
-        $buscaReagente2 = "SELECT * FROM reagentes_lotes   WHERE NUMERO_LOTE     = '$loteReag'";
+        $buscaReagente2 = "SELECT * FROM reagentes_lotes   WHERE CODIGO_REAGENTE = '$codReag' AND NUMERO_LOTE = '$loteReag'";
         $sqlReagente1   = $conectDB->query($buscaReagente1) or die();
         $sqlReagente2   = $conectDB->query($buscaReagente2) or die();
         $Reagente1      = $sqlReagente1->fetch_assoc();
@@ -37,28 +37,32 @@
         $verificaReag1  = mysqli_num_rows($sqlReagente1);
         $verificaReag2  = mysqli_num_rows($sqlReagente2);
 
-        if(($verificaReag1 < 1) && ($verificaReag2 < 1)){
-            echo 'Código do Reagente ou lote não encontrado, verifique!    ';
+        if($verificaReag1 < 1){
+            echo 'Código do Reagente não encontrado, verifique!    ';
+            header('Location: P32RegistroAnalise.php');
+        } else if($verificaReag2 < 1){
+            echo 'Lote do Reagente não encontrado, verifique!    ';
+            header('Location: P32RegistroAnalise.php');
         } else{
-            $_SESSION['codReag'] = $Reagente1['CODIGO_REAGENTE'];
-            $_SESSION['mkrReag'] = $Reagente1['MARCA_REAGENTE'];
-            $_SESSION['cotReag'] = $Reagente1['COTA_LIMITE'];
-            $_SESSION['uniReag'] = $Reagente1['UNIDADE'];
-            $_SESSION['dscReag'] = $Reagente1['DESCR_REAGENTE'];
-            $_SESSION['stkReag'] = $Reagente1['QTDE_ESTOQUE'];
-            $_SESSION['fpqReag'] = $Reagente1['FISPQ'];
-            $fispq = $Reagente1['FISPQ'];
+                $_SESSION['codReag'] = $Reagente1['CODIGO_REAGENTE'];
+                $_SESSION['mkrReag'] = $Reagente1['MARCA_REAGENTE'];
+                $_SESSION['cotReag'] = $Reagente1['COTA_LIMITE'];
+                $_SESSION['uniReag'] = $Reagente1['UNIDADE'];
+                $_SESSION['dscReag'] = $Reagente1['DESCR_REAGENTE'];
+                $_SESSION['stkReag'] = $Reagente1['QTDE_ESTOQUE'];
+                $_SESSION['fpqReag'] = $Reagente1['FISPQ'];
+                $fispq = $Reagente1['FISPQ'];
 
-            $cota    = $Reagente1['COTA_LIMITE'] . $Reagente1['UNIDADE'];
-            $estoque = $Reagente1['QTDE_ESTOQUE'] . $Reagente1['UNIDADE'];
-            $lote    = $Reagente2['QTDE_LOTE'] . $Reagente1['UNIDADE'];
+                $cota    = $Reagente1['COTA_LIMITE'] . $Reagente1['UNIDADE'];
+                $estoque = $Reagente1['QTDE_ESTOQUE'] . $Reagente1['UNIDADE'];
+                $lote    = $Reagente2['QTDE_LOTE'] . $Reagente1['UNIDADE'];
 
-            $_SESSION['loteReag'] = $Reagente2['NUMERO_LOTE'];
-            $_SESSION['valiReag'] = strtotime($Reagente2['DATA_VALI']);
-            $_SESSION['qtdeReag'] = $Reagente2['QTDE_LOTE'];
-            $_SESSION['validade'] = date('d/m/Y', $_SESSION['valiReag']);
-            
-        }
+                $_SESSION['loteReag'] = $Reagente2['NUMERO_LOTE'];
+                $_SESSION['valiReag'] = strtotime($Reagente2['DATA_VALI']);
+                $_SESSION['qtdeReag'] = $Reagente2['QTDE_LOTE'];
+                $_SESSION['validade'] = date('d/m/Y', $_SESSION['valiReag']);
+            }
+    
     }
 ?>
 <!DOCTYPE html>
@@ -264,8 +268,48 @@ tbody{overflow-y:scroll; height:150px;}
                 <div class="pLinha8R">
                     <br>
                 <input class="b2" type="reset" value="Cancelar" id="botao" onclick="location.href='P20MenuGQ.php'">
-                </div>            
+                </div>
+                <div class="pLinha9L">
+                    <br>
+
+                </div> 
+                <div class="pLinha9M">
+                    <br>
+
+                </div>
+                <div class="pLinha9R">
+                    <br>
+
+                </div>             
             </fieldset>
+            <div class="pLinha00"></div>
+            <br><br><br>
+            <div class="tabela3">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:110px;">Lote Amostra</th>
+                            <th style="width:110px;">Lote Reagente</th>
+                            <th style="width:340px;">Descrição do Reagente</th>
+                            <th style="width:110px;">Consumo</th>
+                            <th style="width:110px;">Qtde do Lote</th>
+                            <th style="width:110px;">Total em Estoque</th>
+                            <th style="width:110px;">Condição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width:110; height: 15px; text-align:center;"><?php echo '' ?></td>
+                            <td style="width:110; height: 15px; text-align:center;"><?php echo '' ?></td>
+                            <td style="width:340; height: 15px; text-align:left;"  ><?php echo '' ?></td>
+                            <td style="width:110; height: 15px; text-align:right;" ><?php echo '' ?></td>
+                            <td style="width:110; height: 15px; text-align:right;" ><?php echo '' ?></td>
+                            <td style="width:110; height: 15px; text-align:right;" ><?php echo '' ?></td>
+                            <td style="width:110; height: 15px; text-align:center;"><b><?php echo ''?></b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="tabela1">
             <p style="text-align:center; font-size:14px">Amostras Aguardando Análise</p>
