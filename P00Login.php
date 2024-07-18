@@ -11,7 +11,7 @@
     if(!isset($_SESSION)){session_start();}
     // verifica se botão enviar foi acionado e campos foram preenchidos
     if(isset($_POST['submit']) && !empty($_POST['usuario']) && !empty($_POST['senha'])){
-        // Acessa
+        
         $user = $conectDB->real_escape_string($_POST['usuario']);
         $pass = $conectDB->real_escape_string($_POST['senha']);
 
