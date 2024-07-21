@@ -1,16 +1,15 @@
 <?php
-    // P00.Login.php
-    // Modulo que registra o usuário que fez Login e também verifica credencial e direciona para sua atribuição
-
     //definição de hora local
     date_default_timezone_set('America/Sao_Paulo');
+
     // chama rotina de conexão com banco de dados
     include('P01ConectDB.php');
     
     //verifica se sessão está ativa e reativa
     if(!isset($_SESSION)){session_start();}
-    // verifica se botão enviar foi acionado e campos foram preenchidos
-    if(isset($_POST['submit']) && !empty($_POST['usuario']) && !empty($_POST['senha'])){
+
+      // verifica se botão enviar foi acionado e campos foram preenchidos
+      if(isset($_POST['submit']) && !empty($_POST['usuario']) && !empty($_POST['senha'])){
         
         $user = $conectDB->real_escape_string($_POST['usuario']);
         $pass = $conectDB->real_escape_string($_POST['senha']);
@@ -19,12 +18,14 @@
 
         $result   = $conectDB->query($sql_code) or die("Falha na execução do código SQL");
         $nome     = $result->fetch_assoc();
+
         // verifica se existe usuário
         if(mysqli_num_rows($result) < 1){
             unset($_SESSION['usuario']);
             unset($_SESSION['senha']);
             header('Location: index.php');
-        } else{  // carrega informações de usuário em variáveis globais
+        } else{
+            // carrega informações de usuário em variáveis globais
             $_SESSION['usuario']      = $user;
             $_SESSION['senha']        = $pass;
             $_SESSION['nomeUser']     = $nome['NOME_FUNCIONARIO'];
