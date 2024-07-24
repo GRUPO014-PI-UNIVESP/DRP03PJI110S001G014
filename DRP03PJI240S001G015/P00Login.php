@@ -44,17 +44,8 @@
             $LoginReg = mysqli_query($conectDB, "INSERT INTO historico_login(NOME_FUNCIONARIO, DATA_LOGIN, HORA_LOGIN) 
                         VALUES ('$nomeUser', '$dLogin', '$hLogin')");
 
-            if($nome['CREDENCIAL'] >= 5){
-                header('Location: P11MenuAdmin.php');
-            } else if($nome['CREDENCIAL'] == 2 && $nome['DEPARTAMENTO'] == 'GARANTIA DE QUALIDADE'){
-                header('Location: P21MenuGQ.php');
-            } else if($nome['CREDENCIAL'] == 2 && $nome['DEPARTAMENTO'] == 'LOGÍSTICA'){
-                header('Location: P90MenuLog.php');
-            } else if($nome['CREDENCIAL'] == 2 && $nome['DEPARTAMENTO'] == 'PRODUÇÃO'){
-                header('Location: P91MenuProd.php');
-            } else if($nome['CREDENCIAL'] < 2){
-                header('Location: P04LogOut.php');
-            }            
+            header('Location: P11MenuAdmin.php');
+        
         }
       } else{
         // Não acessa

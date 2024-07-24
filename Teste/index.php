@@ -1,43 +1,106 @@
-<?php
-    // index.php
-    // Modulo incial do sistema que abre uma página web e solicita Usuário e Senha para Login
-    
-    // chama rotina de conexão com banco de dados
-    //include('P01ConectDB.php');
-
-?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style01.css">
-    <title>Home|Login</title>
+    <title>Document</title>
 </head>
+<style>
+    /* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+</style>
 <body>
-    <form action="P00Login.php" method="POST">
-        <div class="LoginBox">
-            <fieldset>
-                <legend style="font-size: 25px;"><b>Login</b></legend>
-                <br><br>
-                <div class="inputBox">
-                    <input class="inputUser" type="text" name="usuario" id="usuario" required>
-                    <label class="labelInput" for="usuario" >Digite seu ID de Usuário</label>                    
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input class="inputUser" type="password" name="senha" id="senha" required>
-                    <label class="labelInput" for="senha" >Digite sua Senha (6 dígitos)</label>                    
-                </div>
-                <br><br><br>
-                <div>
-                    <input type="submit" name="submit" id="submit">
-                </div>
-                <br>
-            </fieldset>
-            <br>
-            <p style="font-size:9px; color:whitesmoke; text-align: center;">Developed by DRP03-PJI240-S001-G015 / 2024</p>
-        </div>
-    </form>
+<form action="action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>   
 </body>
 </html>
