@@ -12,21 +12,21 @@
         session_start();
     }
     $dia = strtotime($_SESSION['dataLogin']);
-    //echo ('Logado: ' . date('d/m/Y', $dia) . ' ' . $_SESSION['horaLogin'] . ' '. $_SESSION['nomeUser']);
 
     //se sessão não tem usuário logado, redireciona para a página de Login
     if(!isset($_SESSION['usuario'])){
         die('Você não está autorizado a acessar a página, pois não está LOGADO "<a href="index.php">Entrar</a>"');    
     }
-  // verificação de credencial de acesso
+  // atribuição de dados do usuário para variáveis funcionais
   $user = $_SESSION['usuario'];
   $pass = $_SESSION['senha'];
 
+  // solicitação de dados do banco de dados
   $verifica  = "SELECT * FROM quadro_funcionarios WHERE ID_USUARIO = '$user' and SENHA_USUARIO = '$pass'";
   $resultado = $conectDB->query($verifica) or die("Falha na execução do código SQL");
   $nome      = $resultado->fetch_assoc();
 
-    // carrega informações de usuário em variáveis globais
+    // atribuição de dados do usuário para variáveis funcionais
     $funcionario  = $nome['NOME_FUNCIONARIO'];
     $credencial   = $nome['CREDENCIAL'];
     $departamento = $nome['DEPARTAMENTO'];
@@ -60,8 +60,7 @@
   <!-- Barra lateral Inferior -->
   <div class="sidebarBottom">
     <br>
-    <div class="tab0"> <p style="text-align: center; font-size: 15px">Informações do Usuário</p> </div>
-    <br><br>
+    <div class="tab0"> <p style="text-align: center; font-size: 15px">Informações do Usuário</p> </div> <br><br>
     <div class="tab0"> <p>Nome do Usuário:                              </p> </div>
     <div class="tab1"> <p> <?php echo ($_SESSION['nomeUser']); ?>       </p> </div><br>
     <div class="tab0"> <p>Data de Login:                                </p> </div>
@@ -78,6 +77,7 @@
     <!-- Área Principal -->
     <div class="main">
       <p style="text-align: center; font-size: 30px">Administração</p>
+
       <!-- Botões Seletores -->
       <div class="frame">
         <button class="custom-btn btn-12" 
@@ -91,6 +91,7 @@
               <span style="font-size: 14px; color: yellow">Credencial sem permissão de acesso!</span><span>Cadastro de Novo Funcionário</span></button><?php
             }
           ?>
+
         <button class="custom-btn btn-12" 
           <?php // verifica se credencial é válida para acesso
             if($departamento == 'ADMINISTRAÇÃO' && $credencial >= 5){?>  
@@ -101,7 +102,8 @@
               onclick="">
               <span style="font-size: 14px; color: yellow">Credencial sem permissão de acesso!</span><span>Atualização de Dados do Funcionário</span></button><?php
             }
-          ?>        
+          ?> 
+                 
         <button class="custom-btn btn-12" onclick="location.href='P30QuadroGeral.php'">
           <span>Clique e acesse!</span><span>Quadro de Funcionários</span></button>
         

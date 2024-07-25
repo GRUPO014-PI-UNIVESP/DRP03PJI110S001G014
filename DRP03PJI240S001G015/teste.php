@@ -1,38 +1,3 @@
-<?php
-    // Programa      : P12Administração.php
-    // Funcionalidade: seletor para tarefas de administração  
-
-    include('P01ConectDB.php');
-
-    //definição de hora local
-    date_default_timezone_set('America/Sao_Paulo');
-
-    //verifica se sessão está ativa e reativa
-    if(!isset($_SESSION)){
-        session_start();
-    }
-    $dia = strtotime($_SESSION['dataLogin']);
-    //echo ('Logado: ' . date('d/m/Y', $dia) . ' ' . $_SESSION['horaLogin'] . ' '. $_SESSION['nomeUser']);
-
-    //se sessão não tem usuário logado, redireciona para a página de Login
-    if(!isset($_SESSION['usuario'])){
-        die('Você não está autorizado a acessar a página, pois não está LOGADO "<a href="index.php">Entrar</a>"');    
-    }
-
-    // verificação de credencial de acesso
-    $user = $_SESSION['usuario'];
-    $pass = $_SESSION['senha'];
-
-    $verifica  = "SELECT * FROM quadro_funcionarios WHERE ID_USUARIO = '$user' and SENHA_USUARIO = '$pass'";
-    $resultado = $conectDB->query($verifica) or die("Falha na execução do código SQL");
-    $nome      = $resultado->fetch_assoc();
-
-      // carrega informações de usuário em variáveis globais
-      $funcionario     = $nome['NOME_FUNCIONARIO'];
-      $credencial   = $nome['CREDENCIAL'];
-      $departamento = $nome['DEPARTAMENTO'];
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,26 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
-<p>Clique para exibir.</p>
-
-<button onclick="myFunction()">Clique aqui</button>
-
-<p id="demo"></p>
-
 <script>
-function myFunction()
-{
-var x;
-
-var idade=prompt("Digite sua idade:");
-
-if (idade!=null)
-  {
-  x="Idade: " + idade + " anos.";
-  document.getElementById("demo").innerHTML=x;
+  /* Set the width of the sidebar to 250px (show it) */
+  function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
   }
-}
+
+  /* Set the width of the sidebar to 0 (hide it) */
+  function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+  }
 </script>
+<style>
+  /* The sidepanel menu */
+  .sidepanel {
+  height: 250px; /* Specify a height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+  }
+
+  /* The sidepanel links */
+  .sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  }
+
+  /* When you mouse over the navigation links, change their color */
+  .sidepanel a:hover {
+  color: #f1f1f1;
+  }
+
+  /* Position and style the close button (top right corner) */
+  .sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  }
+
+  /* Style the button that is used to open the sidepanel */
+  .openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  }
+
+  .openbtn:hover {
+  background-color: #444;
+  }
+</style>
+<body>
+  <div id="mySidepanel" class="sidepanel">
+    <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <button class="openbtn" onclick="openNav()">&#9776; Toggle Sidepanel</button>
+  <h2>Collapsed Sidepanel</h2>
+  <p>Content...</p>
 </body>
 </html>
