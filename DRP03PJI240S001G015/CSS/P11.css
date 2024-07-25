@@ -53,8 +53,8 @@ body{
 }
 /* Estilo do bloco principal */
 .main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  padding: 0px 10px;
+  margin-left: 210px; /* Same as the width of the sidenav */
+  padding: 0px 10px; /*define espaçamento superior e à direita do elemento */
 }
 
 /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
@@ -63,21 +63,12 @@ body{
   .sidebarTop a {font-size: 18px;}
 }
 .tab0{
-  width: 200px;
+  width: 99%;
   height: 10px;
   padding: 3px;
 }
 .tab1{
-  width: 200px;
+  width: 99%;
   height: 30px;
   padding: 3px;
 }
-tab2{
-  width: 145px;
-  height: 20px;
-  padding: 3px;
-}
-.seletor      {width: 95%;border: solid 1px dodgerblue ;padding: 7px;border-radius: 6px;color: whitesmoke;font-size: 15px;background-color: dodgerblue;transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;}
-.seletor:hover{background-color: aqua;color: black;transform: scale(1.1)}
-.sair         {width: 95%;border: solid 1px crimson ;padding: 6px;border-radius: 6px;font-size: 18px;color: whitesmoke;background-color: crimson;transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;}
-.sair:hover   {background-color: lightpink;color: black;transform: scale(1.1)}  

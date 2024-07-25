@@ -18,9 +18,7 @@
     if(!isset($_SESSION['usuario'])){
         die('Você não está autorizado a acessar a página, pois não está LOGADO "<a href="index.php">Entrar</a>"');    
     }
-    if($_SESSION['credencial'] < 5 && $_SESSION['departamento'] != 'ADMINISTRAÇÃO'){
-        header('Location: P09Mensagem.php');
-    }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -65,9 +63,10 @@
     <div class="tab1">
       <p> <?php echo (date($_SESSION['horaLogin'])); ?></p>
     </div><br>
+    <a href=""><i class="fa fa-fw fa-envelope"></i> Mensagens</a>
       <a href=""><i class="fa fa-fw fa-key"></i> Alterar Senha</a>
-      <a href=""><i class="fa fa-fw fa-envelope"></i> Mensagens</a>
-      <br><br><br><br><br><br><br><br><br>
+      <a href=""><i class="fa fa-fw fa-user"></i> Atualizar Dados Pessoais</a>
+      <br><br><br><br><br><br><br>
       <p style="font-size:9px; color:bisque;text-align: center;">Developed by DRP03PJI240S001G015 2024</p>
     </div>
     <div class="main">
