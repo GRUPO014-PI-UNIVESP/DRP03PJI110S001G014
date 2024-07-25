@@ -18,6 +18,18 @@
     if(!isset($_SESSION['usuario'])){
         die('Você não está autorizado a acessar a página, pois não está LOGADO "<a href="index.php">Entrar</a>"');    
     }
+  // verificação de credencial de acesso
+  $user = $_SESSION['usuario'];
+  $pass = $_SESSION['senha'];
+
+  $verifica  = "SELECT * FROM quadro_funcionarios WHERE ID_USUARIO = '$user' and SENHA_USUARIO = '$pass'";
+  $resultado = $conectDB->query($verifica) or die("Falha na execução do código SQL");
+  $nome      = $resultado->fetch_assoc();
+
+    // carrega informações de usuário em variáveis globais
+    $funcionario  = $nome['NOME_FUNCIONARIO'];
+    $credencial   = $nome['CREDENCIAL'];
+    $departamento = $nome['DEPARTAMENTO'];
 
 ?>
 <!DOCTYPE html>
@@ -48,31 +60,17 @@
   <!-- Barra lateral Inferior -->
   <div class="sidebarBottom">
     <br>
-    <div class="tab0">
-      <p style="text-align: center; font-size: 15px">Informações do Usuário</p>
-    </div>
+    <div class="tab0"> <p style="text-align: center; font-size: 15px">Informações do Usuário</p> </div>
     <br><br>
-    <div class="tab0">
-      <p>Nome do Usuário:</p>
-    </div>
-    <div class="tab1">
-      <p> <?php echo ($_SESSION['nomeUser']); ?></p>
-    </div><br>
-    <div class="tab0">
-      <p>Data de Login:</p>
-    </div>
-    <div class="tab1">
-      <p> <?php echo (date('d/m/Y', $dia)); ?></p>
-    </div><br>
-    <div class="tab0">
-      <p>Hora:</p>
-    </div>
-    <div class="tab1">
-      <p> <?php echo (date($_SESSION['horaLogin'])); ?></p>
-    </div><br>
-    <a href=""><i class="fa fa-fw fa-envelope"></i> Mensagens</a>
-      <a href=""><i class="fa fa-fw fa-key"></i> Alterar Senha</a>
-      <a href=""><i class="fa fa-fw fa-user"></i> Atualizar Dados Pessoais</a>
+    <div class="tab0"> <p>Nome do Usuário:                              </p> </div>
+    <div class="tab1"> <p> <?php echo ($_SESSION['nomeUser']); ?>       </p> </div><br>
+    <div class="tab0"> <p>Data de Login:                                </p> </div>
+    <div class="tab1"> <p> <?php echo (date('d/m/Y', $dia)); ?>         </p> </div><br>
+    <div class="tab0"> <p>Hora:                                         </p> </div>
+    <div class="tab1"> <p> <?php echo (date($_SESSION['horaLogin'])); ?></p> </div><br>
+      <a href=""><i class="fa fa-fw fa-envelope"></i> Mensagens</a>
+      <a href=""><i class="fa fa-fw fa-key">     </i> Alterar Senha</a>
+      <a href=""><i class="fa fa-fw fa-user">    </i> Atualizar Dados Pessoais</a>
       <br><br><br><br><br><br><br>
       <p style="font-size:9px; color:bisque;text-align: center;">Developed by DRP03PJI240S001G015 2024</p>
     </div>
@@ -82,12 +80,31 @@
       <p style="text-align: center; font-size: 30px">Administração</p>
       <!-- Botões Seletores -->
       <div class="frame">
-        <button class="custom-btn btn-12" onclick="location.href='P20CadastroFuncionario.php'">
-          <span>Clique e acesse!</span><span>Cadastro de Novo Funcionário</span></button>
-        <button class="custom-btn btn-12" onclick="location.href='P25AtualizaDados.php'">
-          <span>Clique e acesse!</span><span>Atualização de Dados do Funcionário</span></button><br><br>
+        <button class="custom-btn btn-12" 
+          <?php // verifica se credencial é válida para acesso
+            if($departamento == 'ADMINISTRAÇÃO' && $credencial >= 5){?>  
+              onclick="location.href='P20CadastroFuncionario.php'">
+              <span>Clique e acesse!</span><span>Cadastro de Novo Funcionário</span></button><?php
+            }
+            if($departamento != 'ADMINISTRAÇÃO' && $credencial <=5){?>
+              onclick="">
+              <span style="font-size: 14px; color: yellow">Credencial sem permissão de acesso!</span><span>Cadastro de Novo Funcionário</span></button><?php
+            }
+          ?>
+        <button class="custom-btn btn-12" 
+          <?php // verifica se credencial é válida para acesso
+            if($departamento == 'ADMINISTRAÇÃO' && $credencial >= 5){?>  
+              onclick="location.href='P25AtualizaDados.php'">
+              <span>Clique e acesse!</span><span>Atualização de Dados do Funcionário</span></button><?php
+            }
+            if($departamento != 'ADMINISTRAÇÃO' && $credencial <=5){?>
+              onclick="">
+              <span style="font-size: 14px; color: yellow">Credencial sem permissão de acesso!</span><span>Atualização de Dados do Funcionário</span></button><?php
+            }
+          ?>        
         <button class="custom-btn btn-12" onclick="location.href='P30QuadroGeral.php'">
           <span>Clique e acesse!</span><span>Quadro de Funcionários</span></button>
+        
         <button class="custom-btn btn-12" onclick="location.href='P03HistoricoLogin.php'">
           <span>Clique e acesse!</span><span>Monitor de Login no Sistema</span></button><br><br>
       </div>

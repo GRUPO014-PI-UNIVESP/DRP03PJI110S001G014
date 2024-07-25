@@ -46,6 +46,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS/P11.css">
+  <link rel="stylesheet" href="CSS/P20.css">
 </head>
 
 <script src="https://kit.fontawesome.com/0c6315cc4a.js" crossorigin="anonymous"></script>
@@ -95,7 +96,15 @@
 
     <!-- Área Principal -->
     <div class="main">
-
+      <p style="text-align: center; font-size: 20px">Cadastro de Novo Funcionário</p>
+      <div class="elementBoxHalf">
+        <label for="dataNasc">Data de Nascimento: </label>
+        <input class="inputBox" type="date" id="dataNasc" name="dataNasc" required>
+      </div><br>
+      <div class="elementBoxFull">
+        <label for="nomeFunc">Nome Completo......: </label>
+        <input class="inputBox" type="text" id="nomeFunc" name="nomeFunc" maxlength="150" required>
+      </div>
     </div>
 </body>
 </html>

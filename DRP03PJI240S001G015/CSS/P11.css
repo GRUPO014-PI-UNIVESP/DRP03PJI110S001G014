@@ -53,7 +53,7 @@ body{
 }
 /* Estilo do bloco principal */
 .main {
-  margin-left: 210px; /* Same as the width of the sidenav */
+  margin-left: 200px; /* Same as the width of the sidenav */
   padding: 0px 10px; /*define espaçamento superior e à direita do elemento */
 }
 
@@ -66,9 +66,11 @@ body{
   width: 99%;
   height: 10px;
   padding: 3px;
+  margin-left: 5px;
 }
 .tab1{
   width: 99%;
   height: 30px;
   padding: 3px;
+  margin-left: 5px;
 }

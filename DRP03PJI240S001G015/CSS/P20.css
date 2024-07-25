@@ -1,0 +1,20 @@
+.elementBoxHalf{
+  background-color: none;
+  width: 50%;
+  height: 20px;
+  font-size: 12px;
+
+}
+
+.elementBoxFull{
+  background-color: none;
+  width: 100%;
+  height: 20px;
+  font-size: 12px;
+
+}
+
+.inputBox{
+  border-radius: 4px;
+  height: 20px;
+}
