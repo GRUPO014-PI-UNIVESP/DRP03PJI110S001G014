@@ -1,20 +1,28 @@
-.elementBoxHalf{
-  background-color: none;
+.positionBox1{
   width: 50%;
-  height: 20px;
-  font-size: 12px;
-
+  height: 40px;
+  padding: 2px;
+  float: left;
+  
 }
-
-.elementBoxFull{
-  background-color: none;
+.positionBox2{
   width: 100%;
-  height: 20px;
-  font-size: 12px;
-
+  height: 40px;
+  padding: 2px;
+  float: left;
+  
 }
-
-.inputBox{
-  border-radius: 4px;
-  height: 20px;
+.positionBox3{
+  width: 25%;
+  height: 40px;
+  padding: 2px;
+  float: left;
+  
+}
+.positionBox4{
+  width: 75%;
+  height: 40px;
+  padding: 2px;
+  float: left;
+  
 }

@@ -58,8 +58,7 @@
   </div>
 
   <!-- Barra lateral Inferior -->
-  <div class="sidebarBottom">
-    <br>
+  <div class="sidebarBottom"> <br>
     <div class="tab0"> <p style="text-align: center; font-size: 15px">Informações do Usuário</p> </div> <br><br>
     <div class="tab0"> <p>Nome do Usuário:                              </p> </div>
     <div class="tab1"> <p> <?php echo ($_SESSION['nomeUser']); ?>       </p> </div><br>
@@ -88,7 +87,8 @@
             }
             if($departamento != 'ADMINISTRAÇÃO' && $credencial <=5){?>
               onclick="">
-              <span style="font-size: 14px; color: yellow">Credencial sem permissão de acesso!</span><span>Cadastro de Novo Funcionário</span></button><?php
+              <span style="font-size: 14px; color: yellow">Credencial sem permissão de acesso!</span>
+              <span>Cadastro de Novo Funcionário</span></button><?php
             }
           ?>
 
@@ -100,14 +100,15 @@
             }
             if($departamento != 'ADMINISTRAÇÃO' && $credencial <=5){?>
               onclick="">
-              <span style="font-size: 14px; color: yellow">Credencial sem permissão de acesso!</span><span>Atualização de Dados do Funcionário</span></button><?php
+              <span style="font-size: 14px; color: yellow">Credencial sem permissão de acesso!</span>
+              <span>Atualização de Dados do Funcionário</span></button><?php
             }
           ?> 
                  
         <button class="custom-btn btn-12" onclick="location.href='P30QuadroGeral.php'">
           <span>Clique e acesse!</span><span>Quadro de Funcionários</span></button>
         
-        <button class="custom-btn btn-12" onclick="location.href='P03HistoricoLogin.php'">
+        <button class="custom-btn btn-12" onclick="location.href='P19HistoricoLogin.php'">
           <span>Clique e acesse!</span><span>Monitor de Login no Sistema</span></button><br><br>
       </div>
     </div>

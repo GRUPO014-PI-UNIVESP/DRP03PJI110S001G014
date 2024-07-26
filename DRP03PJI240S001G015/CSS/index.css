@@ -1,8 +1,6 @@
 body{
   background-color: rgba(25, 170, 150, 0.8);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  color: whitesmoke;
 }
 
 fieldset{
@@ -39,10 +37,10 @@ fieldset{
 .inputUser{
   background: none;
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid lightslategray;
   outline: none;
-  color: white;
-  font-size: 16px;
+  color: black;
+  font-size: 14px;
   width: 98%;
   letter-spacing: 2px;
 }
@@ -74,5 +72,5 @@ fieldset{
 .inputUser:valid ~ .labelInput{
   top: -10px;
   font-size: 10px;
-  color: white;
+  color: whitesmoke;
 }
