@@ -1,22 +1,21 @@
 <?php
-    // Programa      : P12Administração.php
-    // Funcionalidade: seletor para tarefas de administração  
+  // Programa      : P12Administração.php
+  // Funcionalidade: seletor para tarefas de administração  
 
-    include('P01ConectDB.php');
+  include('P01ConectDB.php');
 
-    //definição de hora local
-    date_default_timezone_set('America/Sao_Paulo');
+  //definição de hora local
+  date_default_timezone_set('America/Sao_Paulo');
 
-    //verifica se sessão está ativa e reativa
-    if(!isset($_SESSION)){
-        session_start();
-    }
-    $dia = strtotime($_SESSION['dataLogin']);
+  //verifica se sessão está ativa e reativa
+  if(!isset($_SESSION)) { session_start(); }
 
-    //se sessão não tem usuário logado, redireciona para a página de Login
-    if(!isset($_SESSION['usuario'])){
-        die('Você não está autorizado a acessar a página, pois não está LOGADO "<a href="index.php">Entrar</a>"');    
-    }
+  $dia = strtotime($_SESSION['dataLogin']);
+
+  //se sessão não tem usuário logado, redireciona para a página de Login
+  if(!isset($_SESSION['usuario'])){
+    die('Você não está autorizado a acessar a página, pois não está LOGADO "<a href="index.php">Entrar</a>"');    
+  }
   // atribuição de dados do usuário para variáveis funcionais
   $user = $_SESSION['usuario'];
   $pass = $_SESSION['senha'];
@@ -26,11 +25,10 @@
   $resultado = $conectDB->query($verifica) or die("Falha na execução do código SQL");
   $nome      = $resultado->fetch_assoc();
 
-    // atribuição de dados do usuário para variáveis funcionais
-    $funcionario  = $nome['NOME_FUNCIONARIO'];
-    $credencial   = $nome['CREDENCIAL'];
-    $departamento = $nome['DEPARTAMENTO'];
-
+  // atribuição de dados do usuário para variáveis funcionais
+  $funcionario  = $nome['NOME_FUNCIONARIO'];
+  $credencial   = $nome['CREDENCIAL'];
+  $departamento = $nome['DEPARTAMENTO'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -98,7 +96,7 @@
               onclick="location.href='P25AtualizaDados.php'">
               <span>Clique e acesse!</span><span>Atualização de Dados do Funcionário</span></button><?php
             }
-            if($departamento != 'ADMINISTRAÇÃO' && $credencial <=5){?>
+            if($departamento != 'ADMINISTRAÇÃO' && $credencial <= 5){?>
               onclick="">
               <span style="font-size: 14px; color: yellow">Credencial sem permissão de acesso!</span>
               <span>Atualização de Dados do Funcionário</span></button><?php

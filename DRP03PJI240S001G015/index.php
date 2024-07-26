@@ -39,7 +39,6 @@
                 </div>
                 <br>
             </fieldset>
-            <br>
             <p style="font-size:9px; color:bisque;text-align: center;">Developed by DRP03PJI240S001G015 2024</p>
         </div>
     </form>

@@ -8,15 +8,13 @@
     date_default_timezone_set('America/Sao_Paulo');
 
     //verifica se sessão está ativa e reativa
-    if(!isset($_SESSION)){
-        session_start();
-    }
+    if(!isset($_SESSION)) { session_start(); }
+
     $dia = strtotime($_SESSION['dataLogin']);
-    //echo ('Logado: ' . date('d/m/Y', $dia) . ' ' . $_SESSION['horaLogin'] . ' '. $_SESSION['nomeUser']);
 
     //se sessão não tem usuário logado, redireciona para a página de Login
     if(!isset($_SESSION['usuario'])){
-        die('Você não está autorizado a acessar a página, pois não está LOGADO "<a href="index.php">Entrar</a>"');    
+      die('Você não está autorizado a acessar a página, pois não está LOGADO "<a href="index.php">Ir para Login</a>"');    
     }
 ?>
 <!DOCTYPE html>

@@ -1,6 +1,7 @@
 body{
-  background-color: rgba(25, 170, 150, 0.8);
+  background-color: rgba(5, 120, 100, 0.8);
   font-family: Arial, Helvetica, sans-serif;
+  color: whitesmoke;
 }
 
 fieldset{
@@ -13,21 +14,13 @@ fieldset{
   position: absolute;
   background-color:rgb(80, 75, 75);
   width: 240px;
-  height: 295px;
+  height: 300px;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   color: whitesmoke;
   padding: 10px;
   border-radius: 10px;
-}
-
-.boxSub{
-  background: none;
-  width: 450px;
-  height: 70px;
-  padding: 5px;
-  float: left;
 }
 
 .inputBox{
@@ -39,10 +32,7 @@ fieldset{
   border: none;
   border-bottom: 1px solid lightslategray;
   outline: none;
-  color: whitesmoke;
-  font-size: 14px;
-  width: 98%;
-  letter-spacing: 2px;
+  font-size: 12px;
 }
 
 .labelInput{
