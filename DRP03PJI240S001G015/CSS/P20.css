@@ -1,19 +1,19 @@
 .positionBox1{
-  width: 50%;
+  width: 20%;
   height: 40px;
   padding: 2px;
   float: left;
   
 }
 .positionBox2{
-  width: 100%;
+  width: 25%;
   height: 40px;
   padding: 2px;
   float: left;
   
 }
 .positionBox3{
-  width: 25%;
+  width: 50%;
   height: 40px;
   padding: 2px;
   float: left;
@@ -21,6 +21,13 @@
 }
 .positionBox4{
   width: 75%;
+  height: 40px;
+  padding: 2px;
+  float: left;
+  
+}
+.positionBox5{
+  width: 100%;
   height: 40px;
   padding: 2px;
   float: left;

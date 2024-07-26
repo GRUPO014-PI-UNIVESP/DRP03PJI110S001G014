@@ -79,7 +79,7 @@
     <!-- Área Principal -->
     <div class="main">
       <p style="text-align: center; font-size: 30px">Administração</p>
-      <div class="positionBox3">
+      <div class="positionBox1">
         <div class="inputBox">
           <?php
             $numReg = "SELECT MAX(ID_FUNCIONARIO) AS ID_FUNCIONARIO FROM quadro_funcionarios";
@@ -87,22 +87,25 @@
             $cod    = $busca->fetch_assoc();
             $lastID = $cod['ID_FUNCIONARIO'] + 1;
           ?>
-          <input class="inputUser" type="number" name="cadNo" id="cadNo" value="<?php echo($lastID) ?>">
+          <input class="inputUser" type="number" name="cadNo" id="cadNo" style="text-align: center" value="<?php echo($lastID) ?>">
           <label class="labelInput" for="cadNo" >Cadastro No.</label>
         </div>
       </div>
-      <div class="positionBox3">
+      <!--
+      <div class="positionBox2">
         <div class="inputBox">
           <input class="inputUser" type="date" name="dataNasc" id="dataNasc" >
           <label class="labelInput" for="dataNasc" >Data de Nascimento</label>
         </div>
       </div>
-      <div class="positionBox2">
+      <div class="positionBox3"></div>
+      <div class="positionBox5">
         <div class="inputBox">
           <input class="inputUser" type="text" name="nome" id="nome" style="text-transform: uppercase" onchange="this.form.submit()" required>
           <label class="labelInput" for="nome" >Nome Completo*</label>
         </div>
       </div>
+      -->
     </div>
 </body>
 </html>
