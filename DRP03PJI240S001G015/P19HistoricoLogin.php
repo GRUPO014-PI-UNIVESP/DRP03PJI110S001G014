@@ -25,6 +25,7 @@
     <title>Administração | Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/P11.css">
     <link rel="stylesheet" href="CSS/P12.css">
 </head>
@@ -63,7 +64,7 @@
         <p style="text-align: center; font-size: 25px">Histórico do Acesso de Usuários</p>
         <br>
         <style>
-            table, td, th{ padding: 4px; border-bottom: 1px solid lightslategray; border-collapse: collapse; }
+            table, td, th{ padding: 5px; border-bottom: 1px solid whitesmoke; border-collapse: collapse; }
             thead, tbody{ display: block; }
             tbody{ overflow-y: scroll; height: 600px; }
         </style>
