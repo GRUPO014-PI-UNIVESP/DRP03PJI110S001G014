@@ -12,7 +12,7 @@ fieldset{
 
 .LoginBox{
   position: absolute;
-  background-color:rgb(80, 75, 75);
+  background-color:rgba(0, 0, 0, 0.5);
   width: 240px;
   height: 300px;
   top: 50%;
@@ -32,7 +32,9 @@ fieldset{
   border: none;
   border-bottom: 1px solid lightslategray;
   outline: none;
-  font-size: 12px;
+  width: 100%;
+  font-size: 14px;
+  color: whitesmoke;
 }
 
 .labelInput{
