@@ -38,9 +38,6 @@
   <title>Home | Main</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="CSS/index.css">
-  <link rel="stylesheet" href="CSS/P11.css">
-  <link rel="stylesheet" href="CSS/P12.css">
   <link rel="stylesheet" href="CSS/P20.css">
 </head>
 
@@ -69,7 +66,7 @@
       <a href=""><i class="fa fa-fw fa-envelope"></i> Mensagens</a>
       <a href=""><i class="fa fa-fw fa-key">     </i> Alterar Senha</a>
       <a href=""><i class="fa fa-fw fa-user">    </i> Atualizar Dados Pessoais</a>
-      <br><br><br><br><br><br><br>
+      <br><br><br><br><br><br>
       <p style="font-size:9px; color:bisque;text-align: center;">Developed by DRP03PJI240S001G015 2024</p>
     </div>
 
@@ -81,8 +78,14 @@
           $codReg   = "SELECT MAX(ID_FUNCIONARIO) AS ID_FUNCIONARIO FROM quadro_funcionarios";
           $busca    = $conectDB->query($codReg) or die;
           $registro = $busca->fetch_assoc();
+          $nID      = $registro['ID_FUNCIONARIO'] + 1;
         ?>
-        
+        <div class="campoID">
+          <div class="inputBox">
+            <input class="inputUser" type="text" name="nID" id="nID" value=" <?php echo($nID) ?> " readonly>
+            <label class="labelInput" for="nome" >Cadastro No.</label>
+          </div>
+        </div>
       </div>
     </div>
 </body>

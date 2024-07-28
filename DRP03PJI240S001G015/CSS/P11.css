@@ -1,5 +1,6 @@
 /* Configuração da barra laterial superior */
 .sidebarTop {
+  position: absolute;
   height: 40%;
   width: 200px;
   position: fixed;
@@ -13,6 +14,7 @@
 }
 /* Configuração da barra laterial inferior */
 .sidebarBottom {
+  position: absolute;
   height: 60%;
   width: 200px;
   position: fixed;

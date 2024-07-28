@@ -71,7 +71,7 @@
       <a href=""><i class="fa fa-fw fa-envelope"></i> Mensagens</a>
       <a href=""><i class="fa fa-fw fa-key">     </i> Alterar Senha</a>
       <a href=""><i class="fa fa-fw fa-user">    </i> Atualizar Dados Pessoais</a>
-      <br><br><br><br><br><br><br>
+      <br><br><br><br><br><br>
       <p style="font-size:9px; color:bisque;text-align: center;">Developed by DRP03PJI240S001G015 2024</p>
     </div>
 
