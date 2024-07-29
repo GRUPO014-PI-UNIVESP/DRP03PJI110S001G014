@@ -86,44 +86,46 @@
         <input class="fieldID" type="text" id="nID" name="nID" value=" <?php echo $nID ?> " readonly>
       </div>
       <div class="campo00"> </div>
+      <div class="campo01">
+        <label style="font-size: 11px" for="dataNasc">Data de Nascimento:</label>
+        <input class="field01" type="text" id="dataNasc" name="dataNasc" value=" <?php echo date('d/m/Y', strtotime($_SESSION['dataNasc'])) ?>" style="text-align: center" readonly>
+      </div>
+      <br><br><br>
+      <div class="campo02">
+        <label style="font-size: 11px" for="nomeFunc">Nome Completo</label>
+        <input class="field02" type="text" id="nomeFunc" name="nomeFunc" style="text-transform:uppercase" value=" <?php echo $_SESSION['nomeFunc'] ?>" readonly>
+      </div><br><br><br>
       <form action="#" method="POST">
-        <div class="campo01">
-          <label style="font-size: 11px" for="dataNasc">Data de Nascimento:</label>
-          <input class="field01" type="date" id="dataNasc" name="dataNasc" required>
+        <div class="campo03">
+          <label style="font-size: 11px" for="dataNasc">Data de Admissão:</label>
+          <input class="field01" type="date" id="dataAdmis" name="dataAdmis" required>
+        </div>
+        <div class="campo00"> </div>
+        <div class="campo04">
+          <label style="font-size: 11px" for="dataNasc">Departamento</label>
+          <input class="field01" type="text" id="dataAdmis" name="dataAdmis" required>
+        </div>
+        <div class="campo00"> </div>
+        <div class="campo04">
+          <label style="font-size: 11px" for="dataNasc">Cargo</label>
+          <input class="field01" type="text" id="dataAdmis" name="dataAdmis" required>
         </div>
         <br><br><br>
-        <div class="campo02">
-          <label style="font-size: 11px" for="nomeFunc">Nome Completo</label>
-          <input class="field02" type="text" id="nomeFunc" name="nomeFunc" maxlength="150" style="text-transform:uppercase" onchange="this.form.submit()" required>
+        <p style="margin-left: 5px; font-size: 13px; color:bisque">Dados Pessoais do Funcionário(opcional)</p>
+        <div class="campo01">
+          <label style="font-size: 11px" for="telefone">Telefone</label>
+          <input class="field01" type="text" id="telefone" name="telefone" maxlength="11">
         </div>
+        <div class="campo00"> </div>
+        <div class="campo05">
+          <label style="font-size: 11px" for="email">E-Mail</label>
+          <input class="field02" type="text" id="email" name="email" maxlength="120">
+        </div><br><br><br>
+        <div class="campo02">
+        <label style="font-size: 11px" for="rua">Endereço: Rua</label>
+        <input class="field02" type="text" id="rua" name="rua" style="text-transform:lowercase" >
+      </div>
       </form>
-      <?php
-        if(isset($_POST['nomeFunc']) && !empty($_POST['dataNasc'])){
-
-          $_SESSION['nomeFunc'] = $conectDB->real_escape_string(strtoupper($_POST['nomeFunc']));
-          $_SESSION['dataNasc'] = $_POST['dataNasc'];
-          $nomeFunc = $conectDB->real_escape_string(strtoupper($_POST['nomeFunc']));
-          $dataNasc = $_POST['dataNasc'];
-          $nasc     = $nascFunc;
-  
-          $sql_busca = "SELECT * FROM quadro_funcionarios WHERE NOME_FUNCIONARIO = '$nomeFunc' AND DATA_NASCIMENTO = '$dataNasc'";
-          $sql_result = $conectDB->query($sql_busca) or die("Falha na execução do código SQL");
-          $buscaResult = $sql_result->fetch_assoc();
-          $contador = mysqli_num_rows($sql_result);
-          if($contador != 0){ ?>
-            <div class="campoMSG">
-              <p style="font-size: 18px; color: red">O nome já consta no quadro de funcionários, verifique!</p>
-              <input type="submit" value="Voltar">
-            </div>
-      <?php
-            header('Location: P20CadastroFuncionario.php');            
-          } else{
-            $_SESSION['nomeFunc'] = $nomeFunc;
-            $_SESSION['dataNasc'] = $dataNasc;
-            header('Location: P21CadastroFuncionario.php');
-          }
-        }
-      ?>
     </div>
 </body>
 </html>

@@ -1,131 +1,94 @@
-body{
-  background-color: rgba(5, 120, 100, 0.8);
-  font-family: Arial, Helvetica, sans-serif;
-  color: whitesmoke;
-}
-
-fieldset{
-  text-align: center;
-  border-radius: 8px;
-  border-color: whitesmoke;
-}
-
-.inputBox{
-  position: relative;
-}
-
-.inputUser{
-  background: none;
-  border: none;
-  border-bottom: 1px solid lightslategray;
-  outline: none;
-  width: 100%;
-  font-size: 14px;
-  color: whitesmoke;
-}
-
-.labelInput{
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  pointer-events: none;
-  transition: .5s;
-}
-
-#submit{
-  background-color: dodgerblue;
-  width: 98%;
-  border: none;
-  padding: 10px;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 10px;
-}
-
-#submit:hover{
-  background-color: darkblue;
-}
-
-.inputUser:focus ~ .labelInput,
-.inputUser:valid ~ .labelInput{
-  top: -10px;
+.campoID{
+  margin-left: 5px;
+  width: 80px;
+  height: 25px;
   font-size: 10px;
+  background: none;
+  float: left;
+}
+.fieldID{
+  position: relative;
+  background-color: rgba(0,0,0,0.4);
+  width: 80px;
+  height: 25px;
+  float: left;
+  padding: 2px;
+  border-radius: 6px;
+  text-align:right;
   color: whitesmoke;
+  font-size: 15px;
 }
-
-/* Configuração da barra laterial superior */
-.sidebarTop {
-  position: absolute;
-  height: 40%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.5);
-  overflow-x: hidden;
-  padding-top: 10px;
-  color: whitesmoke;
-}
-/* Configuração da barra laterial inferior */
-.sidebarBottom {
-  position: absolute;
-  height: 60%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 40%;
-  left: 0;
-  background-color: rgba(0,0,0,0.5);
-  overflow-x: hidden;
-  padding-top: 10px;
-  font-size: 11px;
-  color: whitesmoke;
-}
-/* Estilo da barra lateral */
-.sidebarTop a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 13px;
-  color: whitesmoke;
-  display: block;
-}
-.sidebarBottom a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 13px;
-  color: whitesmoke;
-  display: block;
-}
-/* Animação do mouse sobre itens da barra lateral superior */
-.sidebarTop a:hover {
-  color:aqua;
-}
-/* Animação do mouse sobre itens da barra lateral inferior */
-.sidebarBottom a:hover {
-  color:aqua;
-}
-/* Estilo do bloco principal */
-.main {
-  margin-left: 200px; /* Same as the width of the sidenav */
-  padding: 0px 10px; /*define espaçamento superior e à direita do elemento */
-}
-
-/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
-@media screen and (max-height: 450px) {
-  .sidebarTop {padding-top: 15px;}
-  .sidebarTop a {font-size: 18px;}
-}
-.tab0{
-  width: 99%;
-  height: 10px;
-  padding: 3px;
-  margin-left: 5px;
-}
-.tab1{
-  width: 99%;
+.campo00{
+  width: 30px;
   height: 30px;
-  padding: 3px;
+  background: none;
+  float: left;
+}
+.campo01{
+  width: 125px;
+  height: 25px;
+  font-size: 10px;
+  background: none;
+  float: left;
+}
+.field01{
+  position: relative;
+  background-color: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 25px;
+  float: left;
+  padding: 2px;
+  border-radius: 6px;
+  text-align:right;
+  color: whitesmoke;
+  font-size: 13px;
+}
+.campo02{
   margin-left: 5px;
+  width: 750px;
+  height: 25px;
+  font-size: 10px;
+  background: none;
+  float: left;
+}
+.field02{
+  position: relative;
+  background-color: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 25px;
+  float: left;
+  padding: 2px;
+  border-radius: 6px;
+  color: whitesmoke;
+  font-size: 11px;
+}
+.campo03{
+  margin-left: 5px;
+  width: 125px;
+  height: 25px;
+  font-size: 10px;
+  background: none;
+  float: left;
+}
+.campo04{
+  margin-left: 5px;
+  width: 277px;
+  height: 25px;
+  font-size: 10px;
+  background: none;
+  float: left;
+}
+.campo05{
+  width: 595px;
+  height: 25px;
+  font-size: 10px;
+  background: none;
+  float: left;
+}
+.campoMSG{
+  margin-left: 5px;
+  width: 750px;
+  height: 25px;
+  background: none;
+  float: left;
 }
