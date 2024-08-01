@@ -1,6 +1,6 @@
 async function carregar_produtos(valor){
   if(valor.length >= 1){
-    const dados = await fetch('pesquisar_produtos.php?nome=' + valor);
+    const dados    = await fetch('pesquisar_produtos.php?nome=' + valor);
     const resposta = await dados.json();
     console.log(resposta);
 
@@ -29,10 +29,33 @@ document.addEventListener('click', function(event){
   if(!validar_clique){
     document.getElementById('resultado_pesquisa').innerHTML = '';
   }
-});
+  });
 
-function listar_produto(nome){
+async function listar_produto(nome){
   console.log(nome);
+  document.getElementById("produto").value = nome;
+
+  const dados = await fetch('listar_produtos.php?nome=' + nome);
+  const resposta = await dados.json();
+  var produto = "";
+
+  if(resposta['status']){
+    for(i = 0; i < resposta['dados'].length; i++){
+      produto += "<a href='visualizar.php?id=" + 
+      resposta['dados'][i]['id'] + "'>" + resposta['dados'][i]['nome'] + "</a><br><br>";
+    }
+  }else{
+    produto += "<div class='alert alert-danger' role='alert'>" + resposta['msg'] + "</div>";
+  }
+  document.getElementById('listar_produtos').innerHTML = produto;
 }
+
+const pesqProdutoForm = document.getElementById('pesq-produto-form');
+pesqProdutoForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const nome = document.getElementById("produto").value;
+  listar_produto(nome);
+})
 
 //minuto 44:30

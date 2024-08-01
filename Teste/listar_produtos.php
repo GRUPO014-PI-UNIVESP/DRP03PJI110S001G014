@@ -8,7 +8,7 @@
     //$pesq_produto    = "%" . $nome_produto . "%";
     //$query_produtos  = "SELECT id, nome FROM produtos WHERE nome LIKE :nome  LIMIT 10 ";
 
-    $query_produtos  = "SELECT id, nome FROM produtos WHERE MATCH(nome) AGAINST (:nome IN NATURAL LANGUAGE MODE) LIMIT 10 ";
+    $query_produtos  = "SELECT id, nome FROM produtos WHERE MATCH(nome) AGAINST (:nome IN NATURAL LANGUAGE MODE)  LIMIT 10 ";
 
     $result_produtos = $conn->prepare($query_produtos);
     $result_produtos->bindParam(':nome', $nome_produto);
