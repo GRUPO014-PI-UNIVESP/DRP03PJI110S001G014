@@ -57,5 +57,3 @@ pesqProdutoForm.addEventListener("submit", (e) => {
   const nome = document.getElementById("produto").value;
   listar_produto(nome);
 })
-
-//minuto 44:30
