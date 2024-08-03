@@ -1,0 +1,75 @@
+/* Configuração da barra laterial superior */
+.sidebarTop {
+  position: absolute;
+  height: 40%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(8, 165, 142, 0.573);
+  overflow-x: hidden;
+  padding-top: 10px;
+  color: whitesmoke;
+}
+/* Configuração da barra laterial inferior */
+.sidebarBottom {
+  position: absolute;
+  height: 60%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 40%;
+  left: 0;
+  background-color: rgba(8, 165, 142, 0.573);
+  overflow-x: hidden;
+  padding-top: 10px;
+  font-size: 11px;
+  color: whitesmoke;
+}
+/* Estilo da barra lateral */
+.sidebarTop a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 13px;
+  color: whitesmoke;
+  display: block;
+}
+.sidebarBottom a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 13px;
+  color: whitesmoke;
+  display: block;
+}
+/* Animação do mouse sobre itens da barra lateral superior */
+.sidebarTop a:hover {
+  color:aqua;
+}
+/* Animação do mouse sobre itens da barra lateral inferior */
+.sidebarBottom a:hover {
+  color:aqua;
+}
+/* Estilo do bloco principal */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  padding: 0px 10px; /*define espaçamento superior e à direita do elemento */
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-height: 450px) {
+  .sidebarTop {padding-top: 15px;}
+  .sidebarTop a {font-size: 18px;}
+}
+.tab0{
+  width: 99%;
+  height: 10px;
+  padding: 3px;
+  margin-left: 5px;
+}
+.tab1{
+  width: 99%;
+  height: 30px;
+  padding: 3px;
+  margin-left: 5px;
+}

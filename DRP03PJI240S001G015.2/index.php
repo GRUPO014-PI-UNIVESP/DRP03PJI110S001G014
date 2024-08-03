@@ -1,16 +1,10 @@
 <?php
-
   // index.php
   // Programa de abertura do sistema pedindo usuário e senha
-
   session_start(); // inicia sessão de trabalho
   ob_start();      // limpa buffer de saída
-
-  //definição de hora local
-  date_default_timezone_set('America/Sao_Paulo');
-
-  //Chama conexão com banco de dados
-  include_once './ConnectDB.php';
+  date_default_timezone_set('America/Sao_Paulo');  //definição de hora local
+  include_once './ConnectDB.php';  //Chama conexão com banco de dados
 ?>
 <!doctype html>
 <html lang="pt-br" data-bs-theme="dark">
@@ -27,6 +21,7 @@
       $login_dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
       //verifica se foi digitado dados
       if(!empty($login_dados['submit'])){
+        //busca dados cadastrados 
         $query_user = "SELECT NOME_FUNCIONARIO, CARGO, DEPARTAMENTO, USUARIO, ID_USUARIO, SENHA_USUARIO 
                         FROM quadro_funcionarios 
                         WHERE USUARIO = :usuario LIMIT 1"; // :usuario é um link com valores do campo usuário
@@ -43,19 +38,23 @@
                         if(password_verify($login_dados['usuario'], $row_user['ID_USUARIO'])){
                           //verifica se senha esta correta
                           if(password_verify($login_dados['senha'], $row_user['SENHA_USUARIO'])){
+                            //atribui valores de usuário para variáveis globais
                             $_SESSION['nome_func'] = $row_user['NOME_FUNCIONARIO'];
                             $_SESSION['cargo'] = $row_user['CARGO'];
                             $_SESSION['departamento'] = $row_user['DEPARTAMENTO'];
-                            echo $_SESSION['nome_func'];
-                            //header("Location: dashboard.php");
+                            //direciona fluxo
+                            header("Location: dashboard.php");
                           } else{
+                            //mensagem de erro de entrada
                             $_SESSION['msg'] = "<p style='color: red; text-align: center'>Erro: usuário ou senha incorreta!</p>";
                           } 
                           } else{
+                          //mensagem de erro de entrada
                           $_SESSION['msg'] = "<p style='color: red; text-align: center'>Erro: usuário ou senha incorreta!</p>";
                         }
                       }
       }
+      //se houver erro de entrada mostra erro na página
       if(isset($_SESSION['msg'])){
         echo $_SESSION['msg'];
         unset($_SESSION['msg']);
@@ -67,7 +66,7 @@
           <h1 style="text-align: center">Login</h1><br>
           <div class="input-group flex-nowrap">
             <span class="input-group-text" id="addon-wrapping">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
               </svg>
             </span>
@@ -76,7 +75,7 @@
           </div><br>
           <div class="input-group flex-nowrap">
             <span class="input-group-text" id="addon-wrapping">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
                 <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
               </svg>   
             </span>
